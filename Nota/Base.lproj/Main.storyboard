@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--vista1-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="vista1" modalTransitionStyle="crossDissolve" id="vXZ-lx-hvc" customClass="ViewController" customModule="Nota" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="Busca notas" translatesAutoresizingMaskIntoConstraints="NO" id="kwO-4T-1HY">
+                                <rect key="frame" x="0.0" y="28" width="369" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="hEz-eY-yru"/>
+                                </connections>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqM-nB-4CH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="add" id="rFX-4B-jBO">
+                                        <connections>
+                                            <segue destination="jca-3Z-ytg" kind="presentation" id="o6k-kq-gpU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="p08-UW-fRL">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h8g-Nc-8Jc">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Add">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                </variation>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WnM-3c-tck">
+                                <rect key="frame" x="0.0" y="72" width="369" height="664"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y9l-BF-cSx">
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Boton"/>
+                                </button>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="116" width="414" height="620"/>
+                                </variation>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bqM-nB-4CH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="bqM-nB-4CH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="busqueda" destination="kwO-4T-1HY" id="9xC-Qp-ePR"/>
+                        <outlet property="searchDisplayController" destination="oiu-Kx-i1H" id="FAf-oB-hLy"/>
+                        <outlet property="tabla" destination="WnM-3c-tck" id="EHZ-3H-1dd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController searchResultsTitle="Resultados" id="oiu-Kx-i1H">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="ysW-0b-FzK"/>
+                        <outlet property="searchBar" destination="kwO-4T-1HY" id="roo-Xw-Hbv"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="Yme-Pn-Pj4"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="NSP-kI-uBF"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="IbL-6P-t2B"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="379.5" y="276.75"/>
+        </scene>
+        <!--vista2-->
+        <scene sceneID="sES-aZ-ol4">
+            <objects>
+                <viewController title="vista2" id="jca-3Z-ytg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kmJ-Kv-dwW"/>
+                        <viewControllerLayoutGuide type="bottom" id="S7z-6v-Pmn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X8G-Re-ua4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pji-R6-Lfs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Atrás" id="m6l-fS-cra">
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="presentation" id="ktt-Xu-t4n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="done" id="DCd-0A-JcG"/>
+                                </items>
+                                <color key="barTintColor" red="0.79383663247605718" green="1" blue="0.97709602138381879" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="38" width="375" height="44"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="jca-3Z-ytg" id="CLc-WM-C6A"/>
+                                </connections>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Título" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Az2-WX-wtM">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="96" width="375" height="30"/>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" keyboardDismissMode="interactive" text="Albert el mejor del mundo" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="G9S-ok-2la">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.86347008613851217" green="1" blue="0.94364340000748659" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="134" width="375" height="602"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Pji-R6-Lfs"/>
+                                <exclude reference="Az2-WX-wtM"/>
+                                <exclude reference="G9S-ok-2la"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Pji-R6-Lfs"/>
+                                <include reference="Az2-WX-wtM"/>
+                                <include reference="G9S-ok-2la"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-1K-Q8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="12"/>
+        </scene>
+    </scenes>
+</document>
